@@ -67,6 +67,7 @@ const HomeSection = ({ onNavigate }: { onNavigate: (section: string) => void }) 
         </div>
       </section>
 <AIGenerator/>
+<TemplateGallery/>
       {/* AI Generation Section */}
       <section className="px-4 py-16 bg-gray-900/50">
         <div className="max-w-4xl mx-auto text-center">

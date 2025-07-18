@@ -192,7 +192,7 @@ VP of Product`
             Rejection Hall of Fame 🏆
           </h1>
           <p className="text-lg text-gray-600">
-            The most highly-rated rejection messages from top companies
+            Got the most unique rejection email ? Share with us ! celebrate the rejections that stood out for their empathy, support, and constructive feedback.
           </p>
         </div>
 

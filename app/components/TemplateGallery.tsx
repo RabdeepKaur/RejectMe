@@ -257,10 +257,10 @@ P.S. We'll definitely keep you in mind for future roles that might be a better f
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            Template Gallery 📚
+            Template Gallery
           </h1>
           <p className="text-lg text-gray-600">
-            Browse our collection of top-rated rejection email templates
+            Dont like the AI generated email? No problem ! here are the Rejction template let the candidate know you care about there opinion.
           </p>
         </div>
 

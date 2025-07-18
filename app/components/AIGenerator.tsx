@@ -2,24 +2,26 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/app/components/ui/button';
 import { Input } from '@/app/components/ui/input';
-//import { Label } from '@/components/ui/label';
+//import { Label } from '@/app/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/app/components/ui/select';
 import { Badge } from '@/app/components/ui/badge';
-import { Copy, Mail, Sparkles, RefreshCw } from 'lucide-react';
+import { Copy, Mail, Sparkles, RefreshCw, Pencil} from 'lucide-react';
 import { toast } from "sonner"
-
-
 
 export const AIGenerator = () => {
   const [formData, setFormData] = useState({
     companyName: '',
     candidateName: '',
+    candidateEmail: '',
     position: '',
     reason: '',
+    subject: '',
+    emailBody: '',
     tone: 'professional',
     length: 'standard'
   });
+
 
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
@@ -78,6 +80,7 @@ export const AIGenerator = () => {
   };
 
   const copyToClipboard = () => {
+
     navigator.clipboard.writeText(generatedEmail);
     toast( "The rejection email has been copied to your clipboard.",
     );
@@ -88,6 +91,9 @@ export const AIGenerator = () => {
       generateEmail();
     }
   }, [formData]);
+   const subject = `Re: ${formData.position} Application`;
+  const emailBody = generatedEmail;
+
 
   return (
     <section className="px-4 py-8">
@@ -97,7 +103,7 @@ export const AIGenerator = () => {
             AI Rejection Generator ✨
           </h1>
           <p className="text-lg text-gray-600">
-            Just create the rejection message! 
+            We known you got other work to do , so Let the AI handle your rejection emails.
           </p>
         </div>
 
@@ -128,6 +134,23 @@ export const AIGenerator = () => {
                   placeholder="e.g., Sarah Johnson"
                   value={formData.candidateName}
                   onChange={(e) => setFormData({...formData, candidateName: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                  <label htmlFor='email'>Candidate Email</label>
+                <Input
+                  id="email"
+                  placeholder="rad@gmail.com"
+                  value={formData.candidateEmail }
+onChange={(e)=>setFormData({...formData, candidateEmail: e.target.value})}></Input>
+</div>
+<div className="space-y-2">
+                <label htmlFor="subject">Subject line</label>
+                <Input
+                  id="subject"
+                  placeholder="Application update for "
+                  value={formData.subject}
+                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
                 />
               </div>
 
@@ -216,42 +239,56 @@ export const AIGenerator = () => {
                   Email Preview
                 </span>
                 {generatedEmail && (
+              
                   <div className="flex gap-2">
+                     <Pencil  />
                     <Button size="sm" variant="outline" onClick={copyToClipboard}>
                       <Copy className="w-4 h-4 mr-1" />
                       Copy
                     </Button>
-                    <Button size="sm" className="bg-red-600 hover:bg-red-700">
-                      <Mail className="w-4 h-4 mr-1" />
-                      Send to Gmail
-                    </Button>
+                      <div>
+                   <a
+  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(formData.candidateEmail)}&su=${encodeURIComponent(formData.position)}&body=${encodeURIComponent(generatedEmail)}`}
+  rel="noopener noreferrer"
+>
+  <Button size="sm" className="bg-red-600 hover:bg-red-700">
+    <Mail className="w-4 h-4 mr-1" />
+    Send to Gmail
+  </Button>
+</a>
+</div>
                   </div>
                 )}
               </CardTitle>
             </CardHeader>
             <CardContent>
+             
               {generatedEmail ? (
                 <div className="bg-gray-50 rounded-lg p-4 min-h-[400px]">
                   <div className="border-b border-gray-200 pb-3 mb-4">
+                    
                     <div className="text-sm text-gray-600 mb-1">
                       <strong>To:</strong> {formData.candidateName ? `${formData.candidateName.toLowerCase().replace(' ', '.')}@email.com` : 'candidate@email.com'}
                     </div>
                     <div className="text-sm text-gray-600">
-                      <strong>Subject:</strong> Re: {formData.position || 'Position'} Application
+                      <strong>Subject:</strong> Re: {formData.subject|| 'Position'} Application
                     </div>
                   </div>
+                  <div>
                   <pre className="whitespace-pre-wrap text-sm leading-relaxed text-gray-800 font-sans">
-                    {generatedEmail}
+                   {generatedEmail} 
                   </pre>
+                  
                 </div>
+                </div>
+                
               ) : (
                 <div className="bg-gray-50 rounded-lg p-8 text-center min-h-[400px] flex items-center justify-center">
-                  <div>
-                    <Mail className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-500">Fill out the form to generate your personalized rejection email</p>
-                  </div>
+                  Reject candatidate emails will appear here once generated.
                 </div>
+              
               )}
+
             </CardContent>
           </Card>
         </div>
