@@ -259,8 +259,8 @@ P.S. We'll definitely keep you in mind for future roles that might be a better f
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
             Template Gallery
           </h1>
-          <p className="text-lg text-gray-600">
-            Dont like the AI generated email? No problem ! here are the Rejction template let the candidate know you care about there opinion.
+          <p className="text-lg text-white">
+            Dont like the AI generated email? No problem ! Here are the Rejction template let the candidate know you care about them.
           </p>
         </div>
 

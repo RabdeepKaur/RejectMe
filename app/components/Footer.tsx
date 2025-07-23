@@ -16,16 +16,16 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 text-sm">
-              Making rejection emails more human, one message at a time.
+              Rejection is better than ghosting.
             </p>
           </div>
           
           <div>
             <h3 className="font-semibold text-white mb-4">Product</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">AI Generator</a></li>
+              <li>AI Generator </li>
               <li><a href="#" className="hover:text-white transition-colors">Templates</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Rate Templates</a></li>
+             {/*<li><a href="#" className="hover:text-white transition-colors">Rate Templates</a></li>*/}
             </ul>
           </div>
           
@@ -41,16 +41,16 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-white mb-4">Connect</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://x.com/Rabdeep790" className="text-white hover:text-green transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/rabdeep-kaur-35a26925b" className="text-white hover:text-green transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/RabdeepKaur" className="text-white hover:text-green transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="rabdeep0202@gmail.com" className="text-white hover:text-green transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
