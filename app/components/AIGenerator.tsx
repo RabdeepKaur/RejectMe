@@ -25,21 +25,35 @@ export const AIGenerator = () => {
   });
 
 
-const [candidates, setCandidates] = useState<
-  { name: string; email: string }[]
->([]);
+const [candidates, setCandidates] = useState<{ name: string; email: string }[]>([]);
+ const [selectedCandidateIndex, setSelectedCandidateIndex] = useState<number>(0);
 
-  const handleCSVData = (candidates: { name: string; email: string }[]) => {
-    if (candidates.length > 0) {
-      const firstCandidate = candidates[0];
-          setFormData((prev) => ({
+const handleCSVData = (parsedCandidates: { name: string; email: string }[]) => {
+  console.log("Received candidates:", parsedCandidates);
+  setCandidates(parsedCandidates);
+  
+  if (parsedCandidates.length > 0) {
+    // Join all names with comma or newline
+    const allNames = parsedCandidates
+      .map(candidate => candidate.name)
+      .filter(name => name.trim() !== '') // Remove empty names
+      .join(', '); // You can change to '\n' for new lines
+    
+    // Join all emails with comma or newline
+    const allEmails = parsedCandidates
+      .map(candidate => candidate.email)
+      .filter(email => email.trim() !== '') // Remove empty emails
+      .join(', '); // You can change to '\n' for new lines
+    
+    setFormData(prev => ({
       ...prev,
-      candidateName: firstCandidate.name,
-      candidateEmail: firstCandidate.email,
+      candidateName: allNames,
+      candidateEmail: allEmails,
     }));
+  }
+};
 
-    }
-  };
+
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -127,7 +141,14 @@ const [candidates, setCandidates] = useState<
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="candidate">Candidate Name</label>
+                <label htmlFor="candidate">Candidate Name
+                    Candidate Name 
+          {candidates.length > 0 && (
+            <span className="text-sm text-gray-500">
+              ({candidates.length} candidates)
+            </span>
+          )}
+                </label>
                 <Input
                   id="candidate"
                   placeholder="e.g., Sarah Johnson"
@@ -136,7 +157,13 @@ const [candidates, setCandidates] = useState<
                 />
               </div>
               <div className="space-y-2">
-                  <label htmlFor='email'>Candidate Email</label>
+                  <label htmlFor='email'>Candidate Email
+                    {candidates.length > 0 && (
+            <span className="text-sm text-gray-500">
+              ({candidates.length} emails)
+            </span>
+          )}
+                  </label>
                 <Input
                   id="email"
                   placeholder="rad@gmail.com"
