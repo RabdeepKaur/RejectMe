@@ -1,11 +1,10 @@
-# RejectMe 💌
+# RejectMe 
 ## AI-Powered Rejection Message Generator
 
 > "Don't Ghost, Just Reject!" - Because candidates deserve closure, not silence.
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://your-demo-link.com)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/rejectme)](https://github.com/yourusername/rejectme)
+
 
 ## 🚀 Overview
 
@@ -118,12 +117,3 @@ RejectMe transforms the rejection process from awkward silence to meaningful clo
 *"Because every 'no' deserves a thoughtful response"*
 
 ---
-
-## 🔗 Quick Links
-
-- [Live Demo](https://rejectme.com)
-- [API Documentation](https://api.rejectme.com/docs)
-- [Brand Guidelines](docs/brand-guidelines.md)
-- [Contributing Guide](CONTRIBUTING.md)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [Security Policy](SECURITY.md)
