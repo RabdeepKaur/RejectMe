@@ -209,8 +209,8 @@ P.S. We'll definitely keep you in mind for future roles that might be a better f
         let newDownvotes = template.downvotes;
         
         // Remove previous vote if exists
-        if (currentVote === 'up') newUpvotes--;
-        if (currentVote === 'down') newDownvotes--;
+        //if (currentVote === 'up') newUpvotes--;
+        //if (currentVote === 'down') newDownvotes--;
         
         // Add new vote if different from current
         if (currentVote !== voteType) {
