@@ -85,14 +85,29 @@ const Filecsv: React.FC<FilecsvProps> = ({ onParsedData }) => {
 
         if (objectData.length > 0) {
           // Use object method if available
-          candidates = objectData.map((row: any, index: number) => {
-            console.log(`Processing object row ${index + 1}:`, row);
+          candidates = objectData.map((row, index: number) => {
+            const r = row as Record<string, unknown>;
+            console.log(`Processing object row ${index + 1}:`, r);
             
             const candidate = {
-              name: row['Name'] || row['Candidate Name'] || row['Full Name'] || 
-                    row['name'] || row['candidate name'] || row['full name'] || '',
-              email: row['Email'] || row['Candidate Email'] || row['Email Address'] || 
-                     row['email'] || row['candidate email'] || row['email address'] || '',
+              name: String(
+                r['Name'] ||
+                r['Candidate Name'] ||
+                r['Full Name'] ||
+                r['name'] ||
+                r['candidate name'] ||
+                r['full name'] ||
+                ''
+              ),
+              email: String(
+                r['Email'] ||
+                r['Candidate Email'] ||
+                r['Email Address'] ||
+                r['email'] ||
+                r['candidate email'] ||
+                r['email address'] ||
+                ''
+              ),
             };
 
             console.log(`Candidate ${index + 1}:`, candidate);
@@ -104,13 +119,14 @@ const Filecsv: React.FC<FilecsvProps> = ({ onParsedData }) => {
           const headers = parsedData[0] as string[];
           console.log("Headers found:", headers);
 
-          candidates = parsedData.slice(1).map((row: any, index: number) => {
-            console.log(`Processing array row ${index + 1}:`, row);
+          candidates = parsedData.slice(1).map((row, index: number) => {
+            const arr = row as string[];
+            console.log(`Processing array row ${index + 1}:`, arr);
             
             const entry: Record<string, string> = {};
             headers.forEach((header: string, idx: number) => {
               if (header) {
-                entry[header.toLowerCase().trim()] = row[idx] || '';
+                entry[header.toLowerCase().trim()] = arr[idx] || '';
               }
             });
 

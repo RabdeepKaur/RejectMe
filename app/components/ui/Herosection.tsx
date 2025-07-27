@@ -72,7 +72,7 @@ export const EmailIllustration = () => {
           Engineer position. After careful consideration,
         </text>
         <text x="50" y="225" fill="hsl(var(--foreground))" fontSize="11">
-          we've decided to move forward with another
+            {"we've decided to move forward with another"}
         </text>
         <text x="50" y="240" fill="hsl(var(--foreground))" fontSize="11">
           candidate whose experience more closely...

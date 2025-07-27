@@ -52,7 +52,7 @@ const HomeSection = ({ onNavigate }: { onNavigate: (section: string) => void }) 
                 transition={{ duration: 0.5, delay: 0.2 }}
 
                className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-8 py-4">
-                Don't Ghost, Just Reject! 
+               {"Don't Ghost, Just Reject! "} 
               </motion.h1>
               <motion.p   initial ={{opacity:0,y:-30}} transition={{duration:0.5,delay:0.3 }} animate={{ opacity:1, y:1 }} className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
                 Generate thoughtful rejection emails in one click. Because candidates deserve closure and ghosting is for loser.
@@ -91,14 +91,14 @@ const HomeSection = ({ onNavigate }: { onNavigate: (section: string) => void }) 
               </div>
               <h3
    className="text-xl font-semibold mb-2 text-white">Got a lot of work to do, and no time?</h3>
-              <p className="text-gray-400">    Don’t worry — we know life gets hectic. Just fill in a few fields with AI, use a prompt, or upload a CSV. We've got every option covered to help you review and reject candidates with ease.</p>
+              <p className="text-gray-400">    {"Don’t worry — we know life gets hectic. Just fill in a few fields with AI, use a prompt, or upload a CSV. We've got every option covered to help you review and reject candidates with ease."}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <HandHeart className="w-8 h-8 text-blue-400" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-white">You really care about the candidate. </h3>
-              <p className="text-gray-400">    Don’t fake it with bad AI. If you genuinely care about your candidates, use our top-voted templates to craft meaningful messages and build lasting relationships.
+              <p className="text-gray-400">   {" Don’t fake it with bad AI. If you genuinely care about your candidates, use our top-voted templates to craft meaningful messages and build lasting relationships."}
   </p>
             </div>
             <div className="text-center">
@@ -106,7 +106,7 @@ const HomeSection = ({ onNavigate }: { onNavigate: (section: string) => void }) 
                 <UserRoundCheck className="w-8 h-8 text-green-400" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-white">Rejection creates connection</h3>
-              <p className="text-gray-400">  Ghosting leaves a bad impression. Candidates might think you don’t care.You never know if your next hire might be the one who applied today. Keep your reputation strong and your connections real.</p>
+              <p className="text-gray-400"> {"Ghosting leaves a bad impression. Candidates might think you don’t care.You never know if your next hire might be the one who applied today. Keep your reputation strong and your connections real."} </p>
             </div>
           </div>
         </div>

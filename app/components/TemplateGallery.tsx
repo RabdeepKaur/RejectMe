@@ -239,7 +239,18 @@ P.S. We'll definitely keep you in mind for future roles that might be a better f
 });*/
   };
 
-  const copyTemplate = (template: any) => {
+  type Template = {
+    id: number;
+    title: string;
+    category: string;
+    upvotes: number;
+    downvotes: number;
+    rating: number;
+    preview: string;
+    fullText: string;
+  };
+
+  const copyTemplate = (template: Template) => {
     navigator.clipboard.writeText(template.fullText);
     toast("The template has been copied to your clipboard.",
     );

@@ -185,10 +185,13 @@ const handlePromptExecution = (promptText: string) => {
       const newFormData = {
         candidateName,
         companyName,
+        candidateEmail: '', // Default empty or parse from prompt if available
         position,
+        reason,
+        subject: '', // Default empty or parse from prompt if available
+        emailBody: '', // Default empty or parse from prompt if available
         tone,
-        length,
-        reason
+        length
       };
       
       setFormData(newFormData);
