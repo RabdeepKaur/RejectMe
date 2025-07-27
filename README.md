@@ -2,9 +2,11 @@
 ## AI-Powered Rejection Message Generator
 
 > "Don't Ghost, Just Reject!" - Because candidates deserve closure, not silence.
+## 🎨 Screenshots
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://your-demo-link.com)
-
+### Email Generator<img width="1889" height="857" alt="Screenshot 2025-07-27 160009" src="https://github.com/user-attachments/assets/7abd6308-a5f1-4fdc-b4d9-4d2b94c82c86" />
+<img width="1692" height="847" alt="Screenshot 2025-07-27 160054" src="https://github.com/user-attachments/assets/25475c89-7341-4415-a5d7-4999eaba4a22" /><img width="1683" height="770" alt="Screenshot 2025-07-27 160039" src="https://github.com/user-attachments/assets/12183bb4-cb65-4875-be8c-1846727db869" />
+<img width="1672" height="861" alt="Screenshot 2025-07-27 160109" src="https://github.com/user-attachments/assets/338326b0-a0c2-4703-ae7d-9ba0f149283b" />
 
 ## 🚀 Overview
 
@@ -37,16 +39,6 @@ RejectMe transforms the rejection process from awkward silence to meaningful clo
 - **Smart Templates**: AI-powered message variations
 - **Vote Tracking**: Community-driven template improvement
 
-## 🎨 Screenshots
-
-### Landing Page
-![Landing Page](screenshots/landing-page.png)
-
-### Email Generator
-![Generator Tool](screenshots/generator-tool.png)
-
-### Template Gallery
-![Template Gallery](screenshots/template-gallery.png)
 
 ## 🚀 Getting Started
 
