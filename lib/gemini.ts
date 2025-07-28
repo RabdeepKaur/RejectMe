@@ -4,6 +4,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 type GenerateEmailOptions = {
+   candidateEmail?: string;
   candidateName: string;
   position: string;
   companyName?: string;
@@ -13,6 +14,7 @@ type GenerateEmailOptions = {
 };
 
 export async function generateRejectionEmail({
+  candidateEmail,
   candidateName,
   position,
   companyName = '',
@@ -33,7 +35,7 @@ export async function generateRejectionEmail({
     },
   });
 
-  const prompt = `Write a professional, polite rejection email to a candidate named ${candidateName} for the position of ${position} at ${companyName}. 
+  const prompt = `Write a professional, polite rejection email ${ candidateEmail}to a candidate named ${candidateName} for the position of ${position} at ${companyName}. 
 
 The reason for rejection is: ${reason}. 
 

@@ -6,7 +6,7 @@ import { Input } from '@/app/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/app/components/ui/select';
 import { Badge } from '@/app/components/ui/badge';
-import { Copy, Mail, Sparkles, RefreshCw, Pencil, Terminal, FileText} from 'lucide-react';
+import { Copy, Mail, Sparkles, RefreshCw, Terminal, FileText} from 'lucide-react';
 import { toast } from "sonner"
 import Filecsv from './ui/Filecsv';
 import { PromptCommand } from './ui/useprompt';
@@ -96,6 +96,7 @@ const generateEmail = async () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+ candidateEmail: formData.candidateEmail,
         companyName: formData.companyName,
         candidateName: formData.candidateName,
         position: formData.position,
@@ -437,7 +438,7 @@ onChange={(e)=>setFormData({...formData, candidateEmail: e.target.value})}></Inp
                 <div className="bg-gray-50 rounded-lg p-4 min-h-[400px]">
                   <div className="border-b border-gray-200 pb-3 mb-4">
                     <div className="text-sm text-gray-600 mb-1">
-                      <strong>To:</strong> {formData.candidateName ? `${formData.candidateName.toLowerCase().replace(' ', '.')}@email.com` : 'candidate@email.com'}
+                      <strong>To:</strong> {formData.candidateEmail}
                     </div>
                     <div className="text-sm text-gray-600">
                       <strong>Subject:</strong> Re: {formData.position || 'Position'} Application

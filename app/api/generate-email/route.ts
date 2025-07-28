@@ -16,6 +16,7 @@ export async function POST(request: NextRequest) {
     }
 
     const email = await generateRejectionEmail({
+       candidateEmail: body.candidateEmail, // Optional field
       candidateName,
       position,
       companyName,
